@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "components_details_details",
+  "info": {
+    "name": "details",
+    "icon": "marker"
+  },
+  "options": {},
+  "attributes": {
+    "FossilType": {
+      "type": "string"
+    },
+    "Power": {
+      "type": "string"
+    },
+    "Gearbox": {
+      "type": "string"
+    },
+    "NumberOfPlaces": {
+      "type": "string"
+    }
+  }
+}

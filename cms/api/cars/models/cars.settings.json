@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "cars",
+  "info": {
+    "name": "Cars"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "year": {
+      "type": "date"
+    },
+    "country": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "state": {
+      "type": "string"
+    },
+    "inCart": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "uid"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "details.details"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "user": {
+      "via": "cars",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
