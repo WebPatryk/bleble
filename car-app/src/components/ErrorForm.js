@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 export default function ErrorForm({ text }) {
 
@@ -10,7 +10,8 @@ export default function ErrorForm({ text }) {
     font-weight:bold;
     text-align:center;
     color: rgb(255, 0, 0);
-`
+    padding:2rem auto;
+`;
 
     return (
         <div>
@@ -18,5 +19,5 @@ export default function ErrorForm({ text }) {
                 {text}
             </ErorTitle>
         </div>
-    )
+    );
 }

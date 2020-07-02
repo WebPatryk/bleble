@@ -3,6 +3,9 @@ import '../style/Car.css';
 
 
 export default function ProductsCars({ id, title, year, country, price, state, image }) {
+
+
+
     return (
 
 

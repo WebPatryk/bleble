@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import ProductsCars from './ProductsCars';
-
+import { cars as queryAllCars } from '../querys/query';
+import Loading from './Loading';
 
 let numberCar = 2;
 
@@ -16,7 +17,7 @@ let cars = gql`
   country,
   price,
   state,
-  inCart,
+
   brand,
   image{
     url
@@ -24,6 +25,10 @@ let cars = gql`
     }
   }
   `;
+
+
+
+
 
 const ProdctsCart = styled.div`
     
@@ -62,31 +67,73 @@ const ProdctsCart = styled.div`
    .car-content{
     justify-self:center;
     }
+
+
+    @media screen and (max-width:800px){
+      .products__allCars-title{
+        margin-top:5rem;
+      }
+
+    }
+
+    @media screen and (max-width:700px){
+      .products__row{
+
+        grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+
+  }
+    }
+
+    @media screen and (max-width:500px){
+      .products__row{
+         grid-template-columns:repeat(1,1fr);
+       }
+       .car__content{
+         width:31rem;
+       }
+
+
+}
+
+@media screen and (max-width:330px){
+  
+       .car__content{
+         width:25rem;
+       }
+      .car__content-photo{
+        width:20rem;
+      }
+      .car__basic-info{
+        font-size:1.3rem;
+        width:100%;
+        margin:0;
+      }
+}
 `;
 
 
 
 export default function Products() {
 
-    const [query, setQuery] = useState(cars);
-    const [allCars, setAllCars] = useState(false);
+  const [query, setQuery] = useState(cars);
+  const [allCars, setAllCars] = useState(false);
 
 
 
-    let { loading, error, data } = useQuery(query);
+  let { loading, error, data } = useQuery(query);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error during fetch</div>;
-
-
-    console.log(data.cars);
+  if (loading) return <Loading />;
+  if (error) return <div>Error during fetch</div>;
 
 
+  console.log(queryAllCars);
 
-    function handleAddNumberCars() {
 
 
-        let cars = gql`
+  function handleAddNumberCars() {
+
+
+    let cars = gql`
 {
     cars(limit:${numberCar += 2}){
         title,
@@ -95,7 +142,7 @@ export default function Products() {
   country,
   price,
   state,
-  inCart,
+
   brand,
   image{
     url
@@ -103,46 +150,56 @@ export default function Products() {
     }
   }
   `;
-        setQuery(cars);
+    setQuery(cars);
 
-        if (numberCar >= data.cars.length) {
-            setAllCars(true);
-        }
+    if (data.cars.length === 8) {
+      setAllCars(true);
     }
+  }
+
+  console.log(data.cars);
+  console.log(numberCar);
 
 
-    return (
-        <div className="products__container">
 
 
-            <ProdctsCart >
-                <div className="products__allCars-container">
-                    <h1 className="products__allCars-title">Here you have all available cars</h1>
-                </div>
 
 
-                <div className="products__allCars">
-
-                    <div className="products__row">
-                        {data.cars.map(car => {
-                            const { id, title, year, country, price, state, image, inCart } = car;
-                            if (!image) return <div>Loading...</div>;
-
-                            return (
-
-                                <ProductsCars id={id} year={year} country={country} price={price} state={state} inCart={inCart} image={image.url} title={title} />
 
 
-                            );
-                        })}
+  return (
+    <div className="products__container">
 
-                    </div>
-                </div>
-                <div className="triangle"></div>
-            </ProdctsCart>
-            <div className="more-elements">
-                <button className="more-cars" onClick={handleAddNumberCars} disabled={allCars}>Load more</button>
-            </div>
+
+      <ProdctsCart >
+        <div className="products__allCars-container">
+          <h1 className="products__allCars-title">Here you have all available cars</h1>
         </div>
-    );
+
+
+        <div className="products__allCars">
+
+          <div className="products__row">
+
+            {
+              data.cars.map(car => {
+                const { id, title, year, country, price, state, image } = car;
+                if (!image) return <Loading />;
+
+                return (
+
+                  <ProductsCars id={id} year={year} country={country} price={price} state={state} image={image.url} title={title} />
+
+                );
+              })
+            }
+          </div>
+        </div>
+        <div className="triangle"></div>
+      </ProdctsCart>
+      <div className="more-elements">
+        <button className="more-cars" onClick={handleAddNumberCars} disabled={allCars}>Load more</button>
+      </div>
+    </div>
+  );
 }

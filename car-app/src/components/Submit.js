@@ -44,9 +44,9 @@ cursor:pointer;
 
 `;
 
-export default function Submit({ name, email, number, prevStep, ...rest }) {
+export default function Submit({ name, email, number, prevStep, userStreet, address, postCode, delivery, ...rest }) {
 
-
+    console.log(userStreet);
 
     function backStep() {
         prevStep();
@@ -62,6 +62,8 @@ export default function Submit({ name, email, number, prevStep, ...rest }) {
         style: { size: 'large' }
     });
 
+    const user = localStorage.getItem('username');
+
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -69,9 +71,11 @@ export default function Submit({ name, email, number, prevStep, ...rest }) {
                     <h1 className="submit__title">Check out correct your data</h1>
                     <div className="submit__data">
                         <ul className="submit__list">
-                            <li className="submit__elements">Name: <span className="submit__user-data">{name ? name : 'Add name...'}</span></li>
-                            <li className="submit__elements">Email: <span className="submit__user-data">{email ? email : 'Add email...'}</span></li>
-                            <li className="submit__elements">Number: <span className="submit__user-data">{number ? number : 'Add number...'}</span></li>
+                            <li className="submit__elements">Name: <span className="submit__user-data">{user ? user : 'Add name...'}</span></li>
+                            <li className="submit__elements">Address: <span className="submit__user-data">{address ? address : 'Add number...'}</span></li>
+                            <li className="submit__elements">Post Code: <span className="submit__user-data">{postCode ? postCode : 'Add Post code...'}</span></li>
+                            <li className="submit__elements">Delivery to: <span className="submit__user-data">{delivery ? delivery : 'Add Delivery...'}</span></li>
+
                         </ul>
                     </div>
                     <Button onClick={backStep} type="button">

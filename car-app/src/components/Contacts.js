@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { ReactComponent as Poland } from '../image/poland.svg';
 import styled, { ThemeProvider } from 'styled-components';
 import { RiRoadMapLine } from "react-icons/ri";
-
+import { size } from '../theme/theme';
 export default function Contacts() {
 
 
@@ -108,6 +108,57 @@ export default function Contacts() {
     const ContactPage = styled.div`
     width:100%;
     margin-bottom:10rem; 
+
+
+    @media  screen and (max-width: ${size.laptopL}) {
+
+
+        .salons__city{
+            margin:0 auto;
+        }
+  
+        .poland-map{
+        transform:scale(.8);
+        padding:0;
+    }
+    .city{
+    &__icon{
+            font-size:3rem;
+        }
+        &__cityName{
+            font-size:2.5rem;
+            
+        }
+        &__cityInfo{
+            font-size:1.3rem;
+
+        }
+    }
+    }
+    @media  screen and (max-width: ${size.laptop}) {
+
+    .poland-map{
+        transform:scale(.5);
+        padding:0;
+    }
+    .salons__map{
+        flex-direction:column;
+    }
+    .salons__city{
+        text-align:center;
+        width:70%;
+        justify-content:center;
+        }
+    .salons__cityInfo{
+        text-align:center;
+        }
+}
+@media  screen and (max-width: ${size.tablet}) {
+
+
+} 
+
+
     .poland-map{
 
     path:hover{
@@ -120,10 +171,12 @@ export default function Contacts() {
 }
     .salons{
         &__info{
-            margin-bottom:8rem;
+            width:70%;
+            margin: 1rem auto 8rem auto;
         }
         &__title{
             text-align:center;
+            margin-top:5rem;
             font-size:3rem;
         }
         &__map{
@@ -135,8 +188,8 @@ export default function Contacts() {
         }
         &__city{
             display:flex;
+            font-size:1.9rem;
             width:50%;
-  
         }
         &__icon{
             font-size:5rem;
@@ -150,7 +203,6 @@ export default function Contacts() {
             font-size:2rem;
             font-weight:500;
             margin-top:1.8rem;
-            width:50rem;
         }
     }
 
@@ -199,6 +251,32 @@ export default function Contacts() {
                 font-size:1.4rem;
             }
         }
+
+        @media  screen and (max-width: ${size.mobileL}) {
+            .poland-map{
+                transform:scale(.3)
+            }
+            .salons__cityInfo{
+                width:auto;
+            }
+            .salons__mapBackground{
+                display:none;
+            }
+            .salons__cityInfo{
+                font-size:1.2rem;
+                width:70%;
+                margin:2rem auto;
+            }
+            .salons__cityName{
+                font-size:1.9rem
+            }
+            .questions__mainTitle{
+                font-size:1.8rem
+            }
+            .question__title{
+                font-size:1rem;
+            }
+        }
      
     `;
 
@@ -233,23 +311,23 @@ export default function Contacts() {
                                 <h1 className="questions__mainTitle">Frequently asked questions</h1>
 
                                 <div className="question">
-                                    <h1 className="question__title" onClick={() => setQuestionOne(!questionOne)}>Blebleble</h1>
-                                    {questionOne && <p className="question__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem eaque sint obcaecati exercitationem. Expedita, dolorum. Impedit cum ipsum beatae deserunt porro, perspiciatis magnam facere est deleniti atque ut inventore iste!</p>}
+                                    <h1 className="question__title" onClick={() => setQuestionOne(!questionOne)}>How to choose cars</h1>
+                                    {questionOne && <p className="question__text">In front pannel you have possibilities to find you dream car.Using filter method you are able to choose car by price and mark and car state.</p>}
                                 </div>
 
                                 <div className="question">
-                                    <h1 className="question__title" onClick={() => setQuestionTwo(!questionTwo)}>Blebleble</h1>
-                                    {questionTwo && <p className="question__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem eaque sint obcaecati exercitationem. Expedita, dolorum. Impedit cum ipsum beatae deserunt porro, perspiciatis magnam facere est deleniti atque ut inventore iste!</p>}
+                                    <h1 className="question__title" onClick={() => setQuestionTwo(!questionTwo)}>How to buy new car</h1>
+                                    {questionTwo && <p className="question__text">It's very simple. When you add car to basket you have to go throught all purchasing steps. Remeber about create an account beouse it's requiere. Afterwards you will add personal data and address your delivery. In the end you will have option to pay.</p>}
                                 </div>
 
                                 <div className="question">
-                                    <h1 className="question__title" onClick={() => setQuestionThree(!questionThree)}>Blebleble</h1>
-                                    {questionThree && <p className="question__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem eaque sint obcaecati exercitationem. Expedita, dolorum. Impedit cum ipsum beatae deserunt porro, perspiciatis magnam facere est deleniti atque ut inventore iste!</p>}
+                                    <h1 className="question__title" onClick={() => setQuestionThree(!questionThree)}>Problem with purchasing</h1>
+                                    {questionThree && <p className="question__text">If you will have some problem send us feedback on email: nice.car@gmail.com . Our teem supports contact with you as soon as it possible.</p>}
                                 </div>
 
                                 <div className="question">
-                                    <h1 className="question__title" onClick={() => setQuestionFourth(!questionFourth)}>Blebleble</h1>
-                                    {questionFourth && <p className="question__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem eaque sint obcaecati exercitationem. Expedita, dolorum. Impedit cum ipsum beatae deserunt porro, perspiciatis magnam facere est deleniti atque ut inventore iste!</p>}
+                                    <h1 className="question__title" onClick={() => setQuestionFourth(!questionFourth)}>You can't find match car</h1>
+                                    {questionFourth && <p className="question__text">Have you some problem with find your dream car. No problem. Send us feedback with nam your car. We send you feedback with information about abilitity this car in our shop.</p>}
                                 </div>
                             </div>
                         </div>

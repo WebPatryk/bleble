@@ -98,22 +98,22 @@ export default function Account({ prevStep, nextStep }) {
 
     const Button = styled.div`
 
-width:16rem;
-text-transform:uppercase;
-font-size:1.4rem;
-color:var(--front-color);
-background-color:var(--brown-title-color);
-padding:12px 2px;
-border-radius:30px;
-display:inline-block;
-margin:1rem 2rem;
-text-align:center;
-box-shadow: 0 0 3px rgba(0,0,0,.5);
-cursor:pointer;
+    width:16rem;
+    text-transform:uppercase;
+    font-size:1.4rem;
+    color:var(--front-color);
+    background-color:var(--brown-title-color);
+    padding:12px 2px;
+    border-radius:30px;
+    display:inline-block;
+    margin:1rem 2rem;
+    text-align:center;
+    box-shadow: 0 0 3px rgba(0,0,0,.5);
+    cursor:pointer;
 
-:hover{
-    opacity:.7;
-}
+    :hover{
+        opacity:.7;
+    }
 `;
 
 
@@ -154,7 +154,7 @@ cursor:pointer;
 
                     </IconContext.Provider>
                     <Button onClick={backStep}>{'<<'}Back</Button>
-                    <Button onClick={continueStep}>Next >></Button>
+                    <Button onClick={continueStep}>Next {">>"}</Button>
                 </div>
                 :
                 <div>
@@ -165,7 +165,7 @@ cursor:pointer;
                         <h1 className="account__heading">Great <span className="account__user">{localStorage.getItem("username")}</span> you have an account go next!</h1>
                     </div>
                     <Button onClick={backStep}> {'<<'}Back</Button>
-                    <Button onClick={continueStep}>Next >></Button>
+                    <Button onClick={continueStep}>Next {">>"}</Button>
                 </div>
             }
         </Account >

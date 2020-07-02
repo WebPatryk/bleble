@@ -148,6 +148,7 @@ export default function Basket(props) {
         <>
             <div className="basket__container">
                 <div className="basket__products">
+
                     <h1>Poducts</h1>
                     <h1>Name</h1>
                     <h1>Price</h1>
@@ -162,8 +163,8 @@ export default function Basket(props) {
                         <div className="basket__element">
                             <div className="basket__element-content">
                                 <img src={`http://localhost:1337${basketElement[0].image.url}`} alt="car" className="basket__image" />
-                                <h1>{basketElement[0].title}</h1>
-                                <h1>{numberWithSpaces(basketElement[0].price)} zł</h1>
+                                <h1 className="basket__titleElement">{basketElement[0].title}</h1>
+                                <h1 className="basket__priceElement">{numberWithSpaces(basketElement[0].price)} zł</h1>
                                 <h1 className="basket__span-container">
                                     <span className="basket__span-btn" onClick={() => subtractQuantity(basketElement[0].id)}>-</span >
                                     <span className="basket__span-btn">{basketElement[0].quantity}</span >
@@ -173,7 +174,7 @@ export default function Basket(props) {
                                     <i class="fas fa-trash" onClick={() => deleteElement(basketElement[0].id)}></i>
 
                                 </h1>
-                                <h1>{numberWithSpaces(basketElement[0].price * basketElement[0].quantity)} zł</h1>
+                                <h1 className="basket__totalElement">{numberWithSpaces(basketElement[0].price * basketElement[0].quantity)} zł</h1>
                             </div>
                         </div>
 
@@ -202,7 +203,7 @@ export default function Basket(props) {
                     </div>
 
                     <Button onClick={continueStep}>
-                        <button className="button" type="button" disabled={valueState.length === 0} >Next >></button>
+                        <button className="button" type="button" disabled={valueState.length === 0} >Next {">>"}</button>
                     </Button>
 
                 </div>

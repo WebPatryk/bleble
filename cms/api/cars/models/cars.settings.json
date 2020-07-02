@@ -31,9 +31,6 @@
     "state": {
       "type": "string"
     },
-    "inCart": {
-      "type": "boolean"
-    },
     "id": {
       "type": "uid"
     },
@@ -47,11 +44,6 @@
     },
     "quantity": {
       "type": "integer"
-    },
-    "user": {
-      "via": "cars",
-      "plugin": "users-permissions",
-      "model": "user"
     }
   }
 }

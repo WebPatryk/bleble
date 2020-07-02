@@ -7,10 +7,11 @@ import { cars, Audi, Mercedes, Lexus, New, Used, Less100, Less200, More200 } fro
 import MainPage from './MainPage';
 const Car = lazy(() => import('./Car'));
 
-function HeaderContent() {
+function HeaderContent(props) {
 
     const [query, setQuery] = useState(cars);
 
+    console.log(props);
 
     let { loading, error, data } = useQuery(query);
 
@@ -34,8 +35,8 @@ function HeaderContent() {
                     {data.cars.map(car => {
 
                         return (
-                            <Suspense fallback={<div>Loading....</div>}>
-                                <Car id={car.id} year={car.year} country={car.country} price={car.price} state={car.state} inCart={car.inCart} image={car.image?.url} title={car.title} />
+                            <Suspense fallback={<Loading />}>
+                                <Car id={car.id} year={car.year} country={car.country} price={car.price} state={car.state} image={car.image?.url} title={car.title} />
                             </Suspense>
 
                         );

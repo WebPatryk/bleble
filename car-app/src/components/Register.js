@@ -80,9 +80,7 @@ export default function Register() {
         const formbar3 = elements.getElementById('formbar3');
         const container = elements.getElementById('container');
 
-        // gsap.set([progressbar1], { autoAlpha: 0 })
-
-
+  
         const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
 
         tl.set([formbar1, formbar2, formbar3], { visibility: "hidden" });

@@ -9,8 +9,8 @@
 .triangle{
     background-image:url("../image/triangle.svg");
     background-size: cover;
-    height: 800px;
     width: 800px;
+    height: 800px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -154,6 +154,7 @@
 .social-media i {
     font-size: 3rem;
     padding: 30px;
+    pointer-events: visible;;
 }
 .fa-facebook-square{
     color: #4267B2;
@@ -165,71 +166,6 @@
     color: #0073B0;
 }
 
-
-/* .scroll-down{
-    position: absolute;
-    left: 50%;
-    bottom: 40px;
-    border:1px solid black;
-    text-decoration: none;
-    color: black;
-    font-size: 4rem;
-    padding: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.scroll-icon{
-    text-decoration: none;
-    color: black;
-    display: flex;
-
-
-}
-.scroll-icon i{
-    width: 100%;
-    text-align: center;
-    margin-left: 3px;
-    font-size: 2rem;
-    transform: translateY(-10px);
-    animation: arrowDown 1.5s ease-in-out infinite;
-}
-.scroll-down::after{
-    content: "";
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: lightgray;
-    border-radius: 50%;
-    opacity: .4;
-    animation: scrollDownAnimation 1s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes scrollDownAnimation{
-    0%{
-        height: 50px;
-        width: 50px;
-    }
-    100%{
-        height: 100px;
-        width: 100px;
-    }
-}
-
-@keyframes arrowDown{
-    0%{
-      transform:translateY(-10px);
-      opacity: .1;
-    }
-    100%{
-        transform:translateY(15px);
-        opacity: 1;
-    }
-} */
 
   .scroll-down-link {
     position: absolute;
@@ -415,37 +351,6 @@
   opacity: .8;
 }
 
-
-
-/* #pointer {
-  width: 200px;
-  height: 60px;
-  position: relative;
-  background: red;
-}
-#pointer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid white;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
-#pointer:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid red;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-} */
-
 .pointer{
   display: inline-flex;
   justify-content: center;
@@ -484,3 +389,227 @@ background-color: rgb(231, 173, 126);
 .pointer--four{
   background-color: rgb(151, 123, 100);
 }
+@media  screen and (max-width: 1550px) {
+  .filter__elements{
+    flex-direction: column;
+  }
+  .filter__methods{
+    display: flex;
+    align-items: center;
+    padding: 2rem .5rem;
+  }
+  .filter__methods-title{
+    margin-bottom: 0;
+    margin-right: 4rem;
+  }
+}
+
+@media  screen and (max-width: 1400px) {
+  .triangle{
+    height: 550px;
+    width: 550px;
+  }
+
+  .header__photo-describtion{
+    top:15%;
+    right: 30%;
+    font-size: 4rem;
+  }
+
+.header__content-services h1{
+    font-size: 7rem;
+
+}
+.header__content-services h1::after{
+  font-size: 7rem;
+}
+.header__content-services p{
+  font-size: 2rem;
+
+}
+.ellipse.thick {
+
+  top: 22px;
+  left: 17px !important;
+}
+
+.ellipse.yellow {
+
+  top: 22px;
+  left: 17px !important;
+}
+
+
+}
+@media  screen and (max-width: 1400px) {
+.header__content-car{
+
+  width: 38rem;
+  }
+  
+.ellipse-container {
+  width: 508px;
+  height: 508px;
+}
+
+}
+@media  screen and (max-width: 1050px) {
+  .triangle{
+    display: none;
+  }
+
+  .ellipse-container {
+      width: 358px;
+      height: 358px;
+  }
+  .ellipse.yellow {
+    width: 87%;
+    height: 87%;
+  }
+  .ellipse.thick{
+    width: 87%;
+    height: 87%;
+  }
+  .header__content-car{
+    width: 27rem;
+  }
+
+  .header__photo-describtion{
+    left: 55%;
+    top:0;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .header__content-services{
+    bottom:160px;
+    left: 50%;
+    transform:translateX(-50%);
+    display: flex;
+}
+  .header__content-services{
+    bottom: 20%;
+  }
+  .header__content-services h1{
+    font-size: 4rem;
+    transform: rotate(0);
+    display: flex;
+    left:-80px;
+}
+.header__content-services h1::after{
+  font-size: 3rem;
+  transform: rotate(0);
+  top:0;
+  left:105%;
+}
+.header__content-services p{
+  font-size: 1.1rem;
+  transform: rotate(0);
+  top: 105%;
+  left: 0%;
+  width: 100%;
+}
+.header__content-rectangle{
+
+  width: 15rem;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__content-rectangle h1{
+  font-size: 1.7em;
+}
+
+}
+
+@media  screen and (max-width: 850px) {
+  .header__content-car{
+    width: 230px ;
+  }
+  .ellipse-container {
+    width: 338px;
+    height: 338px;
+  }
+  .ellipse.thick {
+    width: 86%;
+    height: 90%;
+    top: 22px;
+    left: 13px !important;
+  }
+  
+  .ellipse.yellow {
+    width: 86%;
+    height: 90% !important;
+    top: 22px;
+    left: 13px !important;
+  }
+  .header__content-rectangle{
+    display: none;
+  }
+  .header__photo-describtion{
+    font-size: 2.2rem;
+    margin-top: 5rem;
+  }
+
+.header__content-services h1{
+    font-size: 5rem;
+    font-weight: bold;
+   transform: rotate(-90deg);
+   position: relative;
+}
+.header__content-services h1::after{
+    content:"on Sale";
+    font-size: 3rem;
+    color: var(--main-color);
+    position:absolute;
+    top:60%;
+    left: 60%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: .8;
+}
+.header__content-services p{
+  transform: rotate(-90deg);
+  position: absolute;
+  top:50%;
+  left: 80%;
+  font-size: 1.2rem;
+  width: 50%;
+}
+  
+}
+
+@media  screen and (max-width: 550px) {
+  .car__container{
+    grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
+  }
+  .header__photo-describtion{
+    margin-top: 7rem;
+    font-size: 1.6rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media  screen and (max-width: 400px) {
+
+  .ellipse-container {
+    width: 258px;
+    height: 258px;
+  }
+  .ellipse.yellow {
+    width: 90% !important;
+    height: 85% !important;
+  }
+  .ellipse.thick{
+    width: 90% !important;
+    height: 85% !important;
+  }
+  .header__content-car{
+  width: 18rem;
+  }
+}
+

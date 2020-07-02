@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 const UserContainer = styled.div`
-width:30%;
+width:35vw;
 margin: 0 auto;
 padding-top:2rem;
 height:90vh;

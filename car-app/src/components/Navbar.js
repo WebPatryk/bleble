@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../style/Navbar.css';
 import { Link, useHistory } from "react-router-dom";
 import { ProductsContext } from '../context/context';
 import { store } from 'react-notifications-component';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
 
     const [valueState, setValueState] = useContext(ProductsContext);
+
+    const [active, setActive] = useState(false);
+
 
     const history = useHistory();
 
@@ -34,18 +37,24 @@ export default function Navbar() {
         history.replace('/');
         localStorage.removeItem('photoUser');
     }
-
-
+    const path = history.location.pathname;
 
 
     return (
         <nav className="nav">
+            <a href="#" className="nav__hamburger" onClick={() => setActive(!active)}>
+                <span className="nav__bar"></span>
+                <span className="nav__bar"></span>
+                <span className="nav__bar"></span>
+            </a>
             <ul className="nav__links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Products</Link></li>
-                <li><Link to="/contacts">Contact</Link></li>
+                <li className={active ? "nav__link active" : "nav__link"}>
+                    <Link to="/" className={path === '/' ? 'activeLink' : ''}>Home</Link>
+                </li>
+                <li className={active ? "nav__link active" : "nav__link"}><Link to="/products" className={path === '/products' ? 'activeLink' : ''}>Products</Link></li>
+                <li className={active ? "nav__link active" : "nav__link"}><Link to="/contacts" className={path === '/contacts' ? 'activeLink' : ''}>Contact</Link></li>
             </ul>
-            <div className="nav__right">
+            <div className={active ? "nav__right active" : "nav__right"}>
                 <div className="user__menu">
                     {localStorage.getItem('username') ?
                         <Link className="nav__user-btn" to="/user">

@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Link } from 'react-router-dom';
 import '../style/SingleCar.css';
-import styled from 'styled-components';
 import { ProductsContext } from '../context/context';
 import '../style/buttons.css';
 import { store } from 'react-notifications-component';
+import Loading from './Loading';
 import {
     AiFillCar, AiOutlineGlobal, AiOutlineDollarCircle, AiFillStar,
     AiOutlineExperiment, AiFillDashboard, AiOutlineSlack, AiTwotoneAppstore
@@ -46,7 +46,6 @@ export default function SingleCar() {
           country,
           price,
           state,
-          inCart,
           quantity,
             details{
             id,
@@ -65,7 +64,7 @@ export default function SingleCar() {
 
     // const filterIdCars = valueState.map(item => item[0].id);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />;
     if (error) return <p>Error :(</p>;
     ;
 
@@ -138,6 +137,11 @@ export default function SingleCar() {
     // console.log(valueState[0]?.map(item => item.quantity));
     // console.log(Number(valueState[0]?.map(item => item.quantity)));
 
+    const numberWithSpaces = (numbers) => {
+        return numbers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    };
+
+
 
     return (
         <div className="single-car__container">
@@ -149,7 +153,6 @@ export default function SingleCar() {
                     country,
                     price,
                     state,
-                    inCart,
                     details,
                     quantity,
                     image } = car;
@@ -210,7 +213,7 @@ export default function SingleCar() {
                                                     <p className="detail__box-parts"><AiOutlineGlobal />Country: <span className="detail__box-data">{country}</span></p>
                                                 </div>
                                                 <div className="detail__box-row-right">
-                                                    <p className="detail__box-parts"><AiOutlineDollarCircle />Price: <span className="detail__box-data">{price}</span></p>
+                                                    <p className="detail__box-parts"><AiOutlineDollarCircle />Price: <span className="detail__box-data">{numberWithSpaces(price)} zł</span></p>
                                                     <p className="detail__box-parts"><AiFillStar />State: <span className="detail__box-data">{state}</span></p>
                                                 </div>
                                             </div>
@@ -225,8 +228,8 @@ export default function SingleCar() {
 
 
                                                 <div className="detail__box-row-left">
-                                                    <p className="detail__box-parts"><AiOutlineExperiment />Fossil Type: <span className="detail__box-data">{FossilType}</span></p>
-                                                    <p className="detail__box-parts"><AiFillDashboard />Speed: <span className="detail__box-data">{Power}</span></p>
+                                                    <p className="detail__box-parts"><AiOutlineExperiment />Type of fuel: <span className="detail__box-data">{FossilType}</span></p>
+                                                    <p className="detail__box-parts"><AiFillDashboard />Speed: <span className="detail__box-data">{Power} KM</span></p>
                                                 </div>
                                                 <div className="detail__box-row-right ">
                                                     <p className="detail__box-parts"><AiOutlineSlack />Gearbox: <span className="detail__box-data">{Gearbox}</span></p>

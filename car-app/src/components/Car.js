@@ -4,6 +4,12 @@ import { Link, } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function Car({ id, title, year, country, price, state, image }) {
+
+    const numberWithSpaces = (numbers) => {
+        return numbers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    };
+
+
     return (
         <div className="car__content">
 
@@ -17,7 +23,7 @@ export default function Car({ id, title, year, country, price, state, image }) {
             <div className="car__primary-info">
                 <h3 className="car__basic-info">Year Production: <p className="car__basic-data">{year}</p></h3>
                 <h3 className="car__basic-info">Country: <p className="car__basic-data">{country}</p></h3>
-                <h3 className="car__basic-info">Price: <p className="car__basic-data">{price} zł</p></h3>
+                <h3 className="car__basic-info">Price: <p className="car__basic-data">{numberWithSpaces(price)} zł</p></h3>
                 <h3 className="car__basic-info">State: <p className="car__basic-data">{state}</p></h3>
 
             </div>

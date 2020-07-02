@@ -12,8 +12,12 @@ export default function ShoppingSteps() {
     const [delivery, setDelivery] = useState({
         name: "",
         email: "",
-        number: ""
+        number: "",
+        address: "",
+        postcode: ""
     });
+    const [street, setStreet] = useState('');
+
 
     function nextStep() {
         setStep(step + 1);
@@ -25,9 +29,12 @@ export default function ShoppingSteps() {
 
     const handleDelivery = input => e => {
         setDelivery({ ...delivery, [input]: e.target.value });
-        // setName(e.target.value);
-        console.log(input, e.target.value);
+        // console.log(input, e.target.value);
     };
+
+
+
+
 
     function showStep() {
         switch (step) {
@@ -38,10 +45,10 @@ export default function ShoppingSteps() {
                 return <Account nextStep={nextStep} prevStep={prevStep} />;
                 break;
             case 3:
-                return <Delivery nextStep={nextStep} prevStep={prevStep} handleDelivery={handleDelivery} />;
+                return <Delivery nextStep={nextStep} prevStep={prevStep} handleDelivery={handleDelivery} userStreet={setStreet} />;
                 break;
             case 4:
-                return <Submit {...delivery} prevStep={prevStep} />;
+                return <Submit {...delivery} prevStep={prevStep} userStreet={street} />;
                 break;
             default:
                 return <Basket nextStep={nextStep} />;
@@ -102,36 +109,65 @@ export default function ShoppingSteps() {
         margin-left:.3rem;
     }
 
+    @media screen and (max-width:800px){
+
+        .steps{
+            margin-top:7rem;
+        }
+        .steps__circle{
+        width:30px;
+        height:30px;
+        margin-right:5rem;
+    }
+    .steps__circle-active{
+        width:30px;
+        height:30px;
+        margin-right:5rem;
+    }
+    .steps:not(:last-child)::after{
+
+        background-color: black;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        top:30%;
+        left:40%;
+    }
+    }
+    @media screen and (max-width:400px){
+       
+          margin-left: 2rem
+        
+    }
     `;
 
 
     return (
         <div style={{ width: '100%' }}>
-            {step}
             <Steps>
                 <div className="steps">
-                    <div className={step === 1 || step === 2 ? 'steps__circle-active' : 'steps__circle'}>
+                    <div className={step === 1 || step === 2 || step === 3 || step === 4 ? 'steps__circle-active' : 'steps__circle'}>
                         <h1 className="steps__number" style={step === 1 ? { color: '#fff' } : { color: '#000' }}>1</h1>
                     </div>
                     <h1 className="steps__name" style={step === 1 ? { color: '#757575' } : { color: '#000' }}>Basket</h1>
                 </div>
 
                 <div className="steps">
-                    <div className="steps__circle">
+                    <div className={step === 2 || step === 3 || step === 4 ? 'steps__circle-active' : 'steps__circle'}>
                         <h1 className="steps__number">2</h1>
                     </div>
                     <h1 className="steps__name">Account</h1>
                 </div>
 
                 <div className="steps">
-                    <div className="steps__circle">
+                    <div className={step === 3 || step === 4 ? 'steps__circle-active' : 'steps__circle'}>
                         <h1 className="steps__number">3</h1>
                     </div>
                     <h1 className="steps__name">Delivery</h1>
                 </div>
 
                 <div className="steps">
-                    <div className="steps__circle">
+                    <div className={step === 4 ? 'steps__circle-active' : 'steps__circle'}>
                         <h1 className="steps__number">4</h1>
                     </div>
                     <h1 className="steps__name">Submit</h1>

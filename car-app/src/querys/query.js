@@ -9,7 +9,6 @@ const cars = gql`
   country,
   price,
   state,
-  inCart,
   image{
     url
   }
@@ -26,7 +25,6 @@ const Audi = gql`
   country,
   price,
   state,
-  inCart,
   brand,
   image{
     url
@@ -34,7 +32,7 @@ const Audi = gql`
     }
   }
   
-`
+`;
 const Mercedes = gql`
 {
     cars(where:{brand:"Mercedes"}){
@@ -44,7 +42,6 @@ const Mercedes = gql`
   country,
   price,
   state,
-  inCart,
   brand,
   image{
     url
@@ -52,7 +49,7 @@ const Mercedes = gql`
     }
   }
   
-`
+`;
 
 const Lexus = gql`
 {
@@ -63,7 +60,6 @@ const Lexus = gql`
   country,
   price,
   state,
-  inCart,
   brand,
   image{
     url
@@ -71,7 +67,7 @@ const Lexus = gql`
     }
   }
   
-`
+`;
 
 const New = gql`
 {
@@ -82,7 +78,6 @@ const New = gql`
   country,
   price,
   state,
-  inCart,
   brand,
   image{
     url
@@ -90,7 +85,7 @@ const New = gql`
     }
   }
   
-`
+`;
 const Used = gql`
 {
     cars(where:{state:"Used"}){
@@ -100,7 +95,6 @@ const Used = gql`
   country,
   price,
   state,
-  inCart,
   brand,
   image{
     url
@@ -108,7 +102,7 @@ const Used = gql`
     }
   }
   
-`
+`;
 
 const Less100 = gql`
 {
@@ -120,7 +114,6 @@ const Less100 = gql`
   country,
   price,
   state,
-  inCart,
   image{
     url
   }
@@ -137,7 +130,6 @@ const Less200 = gql`
   country,
   price,
   state,
-  inCart,
   image{
     url
   }
@@ -156,7 +148,6 @@ const More200 = gql`
   country,
   price,
   state,
-  inCart,
   image{
     url
   }
@@ -164,4 +155,4 @@ const More200 = gql`
 }
 `;
 
-export { cars, Audi, Mercedes, Lexus, New, Used, Less100, Less200, More200 }
+export { cars, Audi, Mercedes, Lexus, New, Used, Less100, Less200, More200 };

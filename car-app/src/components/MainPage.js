@@ -2,6 +2,8 @@ import React from 'react';
 import mercedes from '../image/mercedes.png';
 import smallTriangle from '../image/small-triangle.svg';
 
+
+
 export default function MainPage() {
     return (
         <div className="header__content">
@@ -38,9 +40,9 @@ export default function MainPage() {
 
                 <div className="triangle">
                     <div className="social-media">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-github"></i>
-                        <i class="fab fa-linkedin"></i>
+                        <a href="https://facebook.com"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>

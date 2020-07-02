@@ -188,3 +188,72 @@
 .user-container{
      background-color: #F8F8F8;;
 }
+
+
+
+@media screen and (max-width:1650px){
+     .sigin-in-container{
+          /* flex-direction: column;
+          height: auto;
+          justify-content: center;
+          align-items: center; */
+     }
+
+     .sign-in-box{
+          width: 500px;
+
+     }
+     .illustration-login{
+          width: 600px;
+     }
+}
+
+
+@media screen and (max-width:1400px){
+     .sigin-in-container{
+          /* flex-direction: column;
+          height: auto;
+          justify-content: center;
+          align-items: center; */
+     }
+
+     .sign-in-box{
+          width: 450px;
+
+     }
+     .illustration-login{
+          width: 500px;
+     }
+}
+
+@media screen and (max-width:1150px){
+     .sigin-in-container{
+          /* flex-direction: column;
+          height: auto;
+          justify-content: center;
+          align-items: center; */
+     }
+
+     .sign-in-left{
+          margin: 5rem auto;
+     }
+     .sign-in-box{
+          width: 450px;
+
+     }
+     .sign-in-right{
+         display: none;
+     }
+}
+
+
+@media screen and (max-width:850px){
+     .sign-in-box{
+        margin-top: 5rem;
+        transform:scale(.9);
+      
+     }
+     .sign-in-left{
+          width: 100%;
+     }
+}

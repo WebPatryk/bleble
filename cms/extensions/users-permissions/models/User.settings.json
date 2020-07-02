@@ -54,10 +54,6 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "cars": {
-      "collection": "cars",
-      "via": "user"
-    },
     "icon": {
       "model": "file",
       "via": "related",
