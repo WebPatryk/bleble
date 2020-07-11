@@ -7,12 +7,15 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "production": "cross-env NODE_ENV=production npm start",
+    "productionz": "cross-env NODE_ENV=production npm start"
   },
   "devDependencies": {},
   "dependencies": {
+    "cross-env": "^7.0.2",
     "knex": "<0.20.0",
-    "pg": "^8.2.1",
+    "pg": "^8.2.2",
     "strapi": "3.0.0-beta.19.5",
     "strapi-admin": "3.0.0-beta.19.5",
     "strapi-connector-bookshelf": "3.0.0-beta.19.5",
