@@ -131,13 +131,13 @@ export default function Products() {
   return (
     <div className="products__container">
       <ProdctsCart>
-        <div className="products__allCars-container">
+        <header className="products__allCars-container">
           <h1 className="products__allCars-title">
             Here you have all available cars
           </h1>
-        </div>
+        </header>
 
-        <div className="products__allCars">
+        <main className="products__allCars">
           <div className="products__row">
             {data.cars.map((car) => {
               const { id, title, year, country, price, state, image } = car;
@@ -157,7 +157,7 @@ export default function Products() {
               );
             })}
           </div>
-        </div>
+        </main>
         <div className="triangle"></div>
       </ProdctsCart>
       <div className="more-elements">

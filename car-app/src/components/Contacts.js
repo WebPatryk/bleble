@@ -9,7 +9,7 @@ const theme = {
   background: "#fff",
 };
 
-const ContactPage = styled.div`
+const ContactPage = styled.section`
   width: 100%;
   margin-bottom: 10rem;
 
@@ -273,9 +273,9 @@ export default function Contacts() {
     <>
       <ThemeProvider theme={theme}>
         <ContactPage>
-          <div className="salons">
-            <h1 className="salons__title">Our Salons</h1>
-            <div className="salons__map">
+          <main className="salons">
+            <h2 className="salons__title">Our Salons</h2>
+            <article className="salons__map">
               <div className="salons__mapBackground" ref={polandMap}>
                 <Poland onMouseOut={handlePolandMap} className="poland-map" />
               </div>
@@ -283,28 +283,28 @@ export default function Contacts() {
               <div className="salons__info">
                 <div className="salons__city">
                   <RiRoadMapLine className="salons__icon" />
-                  <h1 className="salons__cityName">{title}</h1>
+                  <h3 className="salons__cityName">{title}</h3>
                 </div>
 
                 <h3 className="salons__cityInfo">{cityInfo}</h3>
               </div>
-            </div>
-          </div>
+            </article>
+          </main>
 
-          <div className="oftenAsk">
+          <article className="oftenAsk">
             <div className="questions">
               <div className="questions__content">
-                <h1 className="questions__mainTitle">
+                <h3 className="questions__mainTitle">
                   Frequently asked questions
-                </h1>
+                </h3>
 
                 <div className="question">
-                  <h1
+                  <h3
                     className="question__title"
                     onClick={() => setQuestionOne(!questionOne)}
                   >
                     How to choose cars
-                  </h1>
+                  </h3>
                   {questionOne && (
                     <p className="question__text">
                       In front pannel you have possibilities to find you dream
@@ -315,12 +315,12 @@ export default function Contacts() {
                 </div>
 
                 <div className="question">
-                  <h1
+                  <h3
                     className="question__title"
                     onClick={() => setQuestionTwo(!questionTwo)}
                   >
                     How to buy new car
-                  </h1>
+                  </h3>
                   {questionTwo && (
                     <p className="question__text">
                       It's very simple. When you add car to basket you have to
@@ -333,12 +333,12 @@ export default function Contacts() {
                 </div>
 
                 <div className="question">
-                  <h1
+                  <h3
                     className="question__title"
                     onClick={() => setQuestionThree(!questionThree)}
                   >
                     Problem with purchasing
-                  </h1>
+                  </h3>
                   {questionThree && (
                     <p className="question__text">
                       If you will have some problem send us feedback on email:
@@ -349,12 +349,12 @@ export default function Contacts() {
                 </div>
 
                 <div className="question">
-                  <h1
+                  <h3
                     className="question__title"
                     onClick={() => setQuestionFourth(!questionFourth)}
                   >
                     You can't find match car
-                  </h1>
+                  </h3>
                   {questionFourth && (
                     <p className="question__text">
                       Have you some problem with find your dream car. No
@@ -366,7 +366,7 @@ export default function Contacts() {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </ContactPage>
       </ThemeProvider>
     </>

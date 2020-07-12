@@ -17,10 +17,10 @@ import {
 import MainPage from "./MainPage";
 const Car = lazy(() => import("./Car"));
 
-function HeaderContent(props) {
+function HeaderContent() {
   const [query, setQuery] = useState(cars);
 
-  let { loading, error, data } = useQuery(query);
+  const { loading, error, data } = useQuery(query);
 
   let content;
 
@@ -30,12 +30,12 @@ function HeaderContent(props) {
     content = <div>Error</div>;
   } else {
     content = (
-      <div
+      <section
         className="car__huge-box"
         style={{ height: "800px" }}
         id="filter-cars"
       >
-        <div className="car__container">
+        <article className="car__container">
           {content}
 
           {data.cars.map((car) => {
@@ -53,8 +53,8 @@ function HeaderContent(props) {
               </Suspense>
             );
           })}
-        </div>
-      </div>
+        </article>
+      </section>
     );
   }
 
@@ -66,60 +66,60 @@ function HeaderContent(props) {
     <>
       {MemoMenuPage}
 
-      <div className="filter__container">
+      <section className="filter__container">
         <h1 className="filter__container-title">Filter:</h1>
         <div className="filter__elements">
           <div className="filter__methods">
             <h2 className="filter__methods-title">Mark:</h2>
             <div className="filter__buttons">
-              <div
+              <a
                 className="pointer firstPointer pointer--one"
                 onClick={() => setQuery(cars)}
               >
                 All
-              </div>
-              <div
+              </a>
+              <a
                 className="pointer pointer--two"
                 onClick={() => setQuery(Audi)}
               >
                 Audi
-              </div>
-              <div
+              </a>
+              <a
                 className="pointer pointer--three"
                 onClick={() => setQuery(Mercedes)}
               >
                 Mercedes
-              </div>
-              <div
+              </a>
+              <a
                 className="pointer lastPointer pointer--four"
                 onClick={() => setQuery(Lexus)}
               >
                 Lexus
-              </div>
+              </a>
             </div>
           </div>
 
           <div className="filter__methods">
             <h2 className="filter__methods-title">Price:</h2>
             <div className="filter__buttons">
-              <div
+              <a
                 className="pointer firstPointer pointer--one"
                 onClick={() => setQuery(Less100)}
               >
                 &lt; 100 000 zł
-              </div>
-              <div
+              </a>
+              <a
                 className="pointer pointer--two pointer-cost"
                 onClick={() => setQuery(Less200)}
               >
                 &lt; 200 000 zł
-              </div>
-              <div
+              </a>
+              <a
                 className="pointer lastPointer three pointer-cost"
                 onClick={() => setQuery(More200)}
               >
                 &gt; 200 000 zł
-              </div>
+              </a>
             </div>
           </div>
 
@@ -141,7 +141,7 @@ function HeaderContent(props) {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {content}
     </>

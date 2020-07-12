@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Message = styled.div`
+const Message = styled.section`
   .succes {
     background-color: #4bb543;
   }
@@ -96,18 +96,18 @@ const Message = styled.div`
 export default function SuccessfulShopping() {
   return (
     <Message>
-      <div className="page-wrapper">
+      <article className="page-wrapper">
         <div className="custom-modal">
           <div className="succes succes-animation icon-top">
             <i className="fa fa-check"></i>
           </div>
           <div className="succes border-bottom"></div>
           <div className="content">
-            <p className="type">Appointment</p>
-            <p className="message-type">Successful shopping</p>
+            <h2 className="type">Appointment</h2>
+            <h4 className="message-type">Successful shopping</h4>
           </div>
         </div>
-      </div>
+      </article>
     </Message>
   );
 }

@@ -83,20 +83,20 @@ export default function SingleCar() {
   };
 
   return (
-    <div className="single-car__container">
+    <section className="single-car__container">
       {data.cars.map((car) => {
         const { title, year, country, price, state, image, id } = car;
 
         const { FossilType, Power, Gearbox, NumberOfPlaces } = car.details;
 
         return (
-          <div key={id}>
+          <main key={id}>
             <div className="details__box">
-              <div className="details__box-title-container">
+              <header className="details__box-title-container">
                 <h1 className="details__box-title">{title}</h1>
-              </div>
+              </header>
 
-              <div className="details__box-content">
+              <article className="details__box-content">
                 <div className="details__box-left">
                   <div className="ellipse-container-single-car">
                     <div className="ellipse thin"></div>
@@ -110,14 +110,14 @@ export default function SingleCar() {
                   />
 
                   <Link to="/">
-                    <div className="button-container back-to-home-btn">
+                    <button className="button-container back-to-home-btn">
                       <div className="icon-container">
                         <i className="fas fa-home home-icon"></i>
                       </div>
                       <div className="textButton-container">
                         <h1 className="textButton">Back to home</h1>
                       </div>
-                    </div>
+                    </button>
                   </Link>
                 </div>
                 <IconContext.Provider
@@ -125,9 +125,9 @@ export default function SingleCar() {
                 >
                   <div className="details__box-right">
                     <div className="details__box-right-text">
-                      <h1 className="detail__box-right-title">
+                      <h3 className="detail__box-right-title">
                         Basic information:
-                      </h1>
+                      </h3>
                       <div className="detail__box-row">
                         <div className="detail__box-row-left">
                           <p className="detail__box-parts">
@@ -158,7 +158,7 @@ export default function SingleCar() {
                       </div>
                     </div>
 
-                    <div className="details__box-right-text box-two">
+                    <article className="details__box-right-text box-two">
                       <h1 className="detail__box-right-title">More details:</h1>
                       <div className="detail__box-row ">
                         <div className="detail__box-row-left">
@@ -190,7 +190,7 @@ export default function SingleCar() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </article>
 
                     <Link
                       to={"/basket"}
@@ -212,11 +212,11 @@ export default function SingleCar() {
                     </Link>
                   </div>
                 </IconContext.Provider>
-              </div>
+              </article>
             </div>
-          </div>
+          </main>
         );
       })}
-    </div>
+    </section>
   );
 }

@@ -120,14 +120,14 @@ export default function Register() {
   }, []);
 
   return (
-    <div className="sigin-in-container">
-      <div className="sign-in-left">
+    <section className="sigin-in-container">
+      <main className="sign-in-left">
         <div
           className="sign-in-box"
           style={{ padding: "35rem 5rem 35rem 5rem" }}
         >
           <img src={Polygon} alt="polygon-login" className="sign-in-polygon" />
-          <h1 className="sign-in-title">Sign Up</h1>
+          <h2 className="sign-in-title">Sign Up</h2>
 
           <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
             :
@@ -213,11 +213,11 @@ export default function Register() {
             </div>
           </form>
         </div>
-      </div>
-      <div className="sign-in-right" ref={SingPhoto}>
+      </main>
+      <section className="sign-in-right" ref={SingPhoto}>
         <FormIllustration className="illustration-login" />
-      </div>
+      </section>
       <div className="triangle"></div>
-    </div>
+    </section>
   );
 }

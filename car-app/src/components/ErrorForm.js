@@ -11,8 +11,8 @@ export default function ErrorForm({ text }) {
   `;
 
   return (
-    <div>
+    <section>
       <ErorTitle>{text}</ErorTitle>
-    </div>
+    </section>
   );
 }

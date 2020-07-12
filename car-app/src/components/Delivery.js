@@ -5,7 +5,7 @@ import { Button } from "./Elements/Button";
 import DeliveryCity from "./DeliveryCity";
 import Loading from "./Loading";
 
-const DeliveryStyle = styled.div`
+const DeliveryStyle = styled.section`
   width: 50%;
   margin: 7rem auto;
   text-align: center;
@@ -120,6 +120,9 @@ const DeliveryStyle = styled.div`
   .delivery__text {
     font-size: 2rem;
   }
+  .delivery__deliverer {
+    border: none;
+  }
 `;
 
 export default function Delivery({ prevStep, nextStep, handleDelivery }) {
@@ -196,7 +199,7 @@ export default function Delivery({ prevStep, nextStep, handleDelivery }) {
         </h1>
 
         <form>
-          <div className="delivery__deliverer">
+          <figcaption className="delivery__deliverer">
             <input
               type="radio"
               id="curier"
@@ -295,7 +298,7 @@ export default function Delivery({ prevStep, nextStep, handleDelivery }) {
                 )}
               </div>
             </label>
-          </div>
+          </figcaption>
 
           <h1 className="delivery__title">2.Payments methods</h1>
           <div className="delivery-methods">

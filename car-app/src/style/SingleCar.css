@@ -120,7 +120,13 @@
   align-self: flex-start;
   cursor: pointer;
 }
-
+.button-container {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.button-container:hover {
+  opacity: 0.8;
+}
 .btn-to-basket {
   padding: 13px 30px;
   font-size: 2rem;

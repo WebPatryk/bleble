@@ -149,8 +149,8 @@ function SignIn() {
   `;
 
   return (
-    <div className="sigin-in-container">
-      <div className="sign-in-left">
+    <section className="sigin-in-container">
+      <main className="sign-in-left">
         <div className="sign-in-box">
           <img src={Polygon} alt="polygon-login" className="sign-in-polygon" />
           <h1 className="sign-in-title">Sign In</h1>
@@ -211,12 +211,12 @@ function SignIn() {
             </Link>
           </form>
         </div>
-      </div>
-      <div className="sign-in-right" ref={SingPhoto}>
+      </main>
+      <aside className="sign-in-right" ref={SingPhoto}>
         <FormIllustration className="illustration-login" />
-      </div>
+      </aside>
       <div className="triangle"></div>
-    </div>
+    </section>
   );
 }
 

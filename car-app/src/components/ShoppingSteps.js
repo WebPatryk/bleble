@@ -5,7 +5,7 @@ import Delivery from "./Delivery";
 import Submit from "./Submit";
 import styled from "styled-components";
 
-const Steps = styled.div`
+const Steps = styled.nav`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -140,7 +140,7 @@ export default function ShoppingSteps() {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <header style={{ width: "100%" }}>
       <Steps>
         <div className="steps">
           <div
@@ -150,19 +150,19 @@ export default function ShoppingSteps() {
                 : "steps__circle"
             }
           >
-            <h1
+            <h4
               className="steps__number"
               style={step === 1 ? { color: "#fff" } : { color: "#000" }}
             >
               1
-            </h1>
+            </h4>
           </div>
-          <h1
+          <h4
             className="steps__name"
             style={step === 1 ? { color: "#757575" } : { color: "#000" }}
           >
             Basket
-          </h1>
+          </h4>
         </div>
 
         <div className="steps">
@@ -173,9 +173,9 @@ export default function ShoppingSteps() {
                 : "steps__circle"
             }
           >
-            <h1 className="steps__number">2</h1>
+            <h4 className="steps__number">2</h4>
           </div>
-          <h1 className="steps__name">Account</h1>
+          <h4 className="steps__name">Account</h4>
         </div>
 
         <div className="steps">
@@ -186,21 +186,21 @@ export default function ShoppingSteps() {
                 : "steps__circle"
             }
           >
-            <h1 className="steps__number">3</h1>
+            <h4 className="steps__number">3</h4>
           </div>
-          <h1 className="steps__name">Delivery</h1>
+          <h4 className="steps__name">Delivery</h4>
         </div>
 
         <div className="steps">
           <div
             className={step === 4 ? "steps__circle-active" : "steps__circle"}
           >
-            <h1 className="steps__number">4</h1>
+            <h4 className="steps__number">4</h4>
           </div>
-          <h1 className="steps__name">Submit</h1>
+          <h4 className="steps__name">Submit</h4>
         </div>
       </Steps>
       {showStep()}
-    </div>
+    </header>
   );
 }

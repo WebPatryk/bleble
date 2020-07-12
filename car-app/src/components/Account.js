@@ -7,7 +7,7 @@ import { IoMdListBox } from "react-icons/io";
 import { GiPriceTag } from "react-icons/gi";
 import nice from "../image/nice.png";
 
-const AccountContainer = styled.div`
+const AccountContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -70,6 +70,7 @@ const AccountContainer = styled.div`
   .account__user {
     color: var(--main-color);
     font-size: 2.1rem;
+    display: inline-block;
   }
 `;
 
@@ -105,7 +106,7 @@ export default function Account({ prevStep, nextStep }) {
       <h1 className="account__title">Do you have an account ?</h1>
 
       {!localStorage.getItem("username") ? (
-        <div className="account__container">
+        <article className="account__container">
           <Link to="sign-in" className="btn account__login-btn ">
             Login to your account
           </Link>
@@ -117,9 +118,9 @@ export default function Account({ prevStep, nextStep }) {
           <IconContext.Provider
             value={{ size: "2rem", style: { marginRight: "2rem" } }}
           >
-            <h1 className="account__main-title">
+            <h2 className="account__main-title">
               Why it worth it have an account
-            </h1>
+            </h2>
             <div>
               <div className="account__table">
                 <FaStopwatch />
@@ -149,22 +150,22 @@ export default function Account({ prevStep, nextStep }) {
           </IconContext.Provider>
           <Button onClick={backStep}>{"<<"}Back</Button>
           <Button onClick={continueStep}>Next {">>"}</Button>
-        </div>
+        </article>
       ) : (
-        <div>
-          <div>
+        <section>
+          <figure>
             <img src={nice} alt="nice" />
             <h1 className="account__heading">
               Great{" "}
-              <span className="account__user">
+              <figcaption className="account__user">
                 {localStorage.getItem("username")}
-              </span>{" "}
+              </figcaption>{" "}
               you have an account go next!
             </h1>
-          </div>
+          </figure>
           <Button onClick={backStep}> {"<<"}Back</Button>
           <Button onClick={continueStep}>Next {">>"}</Button>
-        </div>
+        </section>
       )}
     </AccountContainer>
   );

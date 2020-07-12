@@ -10,17 +10,17 @@ export default function ProductsCars({
   image,
 }) {
   return (
-    <div className="car__content">
-      <div className="car__info">
+    <section className="car__content">
+      <article className="car__info">
         <h1 className="car__content-title">{title}</h1>
         <img
           src={`http://localhost:1337${image}`}
           alt="car"
           className="car__content-photo"
         />
-      </div>
+      </article>
 
-      <div className="car__primary-info">
+      <hgroup className="car__primary-info">
         <h3 className="car__basic-info">
           Year Production: <p className="car__basic-data">{year}</p>
         </h3>
@@ -33,7 +33,7 @@ export default function ProductsCars({
         <h3 className="car__basic-info">
           State: <p className="car__basic-data">{state}</p>
         </h3>
-      </div>
-    </div>
+      </hgroup>
+    </section>
   );
 }

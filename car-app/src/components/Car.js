@@ -9,17 +9,17 @@ export default function Car({ id, title, year, country, price, state, image }) {
   };
 
   return (
-    <div className="car__content">
-      <div className="car__info">
+    <main className="car__content">
+      <header className="car__info">
         <h1 className="car__content-title">{title}</h1>
         <img
           src={`http://localhost:1337${image}`}
           alt="car"
           className="car__content-photo"
         />
-      </div>
+      </header>
 
-      <div className="car__primary-info">
+      <article className="car__primary-info">
         <h3 className="car__basic-info">
           Year Production: <p className="car__basic-data">{year}</p>
         </h3>
@@ -32,12 +32,12 @@ export default function Car({ id, title, year, country, price, state, image }) {
         <h3 className="car__basic-info">
           State: <p className="car__basic-data">{state}</p>
         </h3>
-      </div>
+      </article>
       <Link to={`car/${id}`} className="car__link">
         {" "}
         <button className="car__btn">Details</button>
       </Link>
-    </div>
+    </main>
   );
 }
 

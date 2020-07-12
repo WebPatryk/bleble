@@ -5,7 +5,7 @@ import { Button } from "./Elements/Button";
 import { ProductsContext } from "../context/context";
 import PayPalButton from "./PayPalButton";
 
-const SumbitComponent = styled.div`
+const SumbitComponent = styled.section`
   margin: 4rem auto;
   width: 50%;
   .submit__title {
@@ -79,7 +79,7 @@ export default function Submit({ prevStep, address, postCode }) {
       <ThemeProvider theme={theme}>
         <SumbitComponent>
           <h1 className="submit__title">Check out correct your data</h1>
-          <div className="submit__data">
+          <nav className="submit__data">
             <ul className="submit__list">
               <li className="submit__elements">
                 Name:{" "}
@@ -114,7 +114,7 @@ export default function Submit({ prevStep, address, postCode }) {
                 ))}
               </li>
             </ul>
-          </div>
+          </nav>
           <Button onClick={backStep} type="button">
             <button className="button" type="button">
               {" "}

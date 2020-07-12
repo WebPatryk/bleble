@@ -4,10 +4,10 @@ import smallTriangle from "../image/small-triangle.svg";
 
 export default function MainPage() {
   return (
-    <div className="header__content">
-      <div className="header__huge-content">
+    <header className="header__content">
+      <main className="header__huge-content">
         <div className="header__content-rectangle">
-          <h1>New Create Technology </h1>
+          <h3>New Create Technology </h3>
           <img
             src={smallTriangle}
             alt="triangle"
@@ -15,10 +15,12 @@ export default function MainPage() {
           />
         </div>
 
-        <div className="header__content-services">
+        <figure className="header__content-services">
           <h1>Sercives</h1>
-          <p>Mercedes,Audi,Lexus are avilble in our serciveces</p>
-        </div>
+          <figcaption>
+            Mercedes,Audi,Lexus are avilble in our serciveces
+          </figcaption>
+        </figure>
 
         <div className="ellipse-container">
           <div className="ellipse thin"></div>
@@ -37,11 +39,11 @@ export default function MainPage() {
           The most popular and speed car
         </h1>
 
-        <div className="scroll-down">
+        <button className="scroll-down">
           <a href="#filter-cars" className="scroll-down-link">
             <span></span>Scroll
           </a>
-        </div>
+        </button>
 
         <div className="triangle">
           <div className="social-media">
@@ -56,7 +58,7 @@ export default function MainPage() {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </main>
+    </header>
   );
 }

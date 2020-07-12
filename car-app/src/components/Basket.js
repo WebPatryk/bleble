@@ -111,6 +111,22 @@ export default function Basket(props) {
       const NewStateElement = [
         ...valueState.filter((item) => item[0].id !== id),
       ];
+      store.addNotification({
+        title: "Car has been deleted!",
+        message: "welcome again :)",
+        type: "danger",
+        insert: "bottom",
+
+        container: "bottom-right",
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: {
+          duration: 3000,
+          onScreen: true,
+          showIcon: true,
+          pauseOnHover: true,
+        },
+      });
       setValueState(NewStateElement);
     } else {
       return;
@@ -119,17 +135,17 @@ export default function Basket(props) {
 
   return (
     <>
-      <div className="basket__container">
-        <div className="basket__products">
+      <main className="basket__container">
+        <header className="basket__products">
           <h1>Poducts</h1>
           <h1>Name</h1>
           <h1>Price</h1>
           <h1>Quantity</h1>
           <h1>Remove</h1>
           <h1>Totatal</h1>
-        </div>
+        </header>
 
-        <div>
+        <section>
           {valueState.length ? (
             valueState.map((basketElement) => (
               <div className="basket__element" key={basketElement[0].title}>
@@ -139,13 +155,13 @@ export default function Basket(props) {
                     alt="car"
                     className="basket__image"
                   />
-                  <h1 className="basket__titleElement">
+                  <h2 className="basket__titleElement">
                     {basketElement[0].title}
-                  </h1>
-                  <h1 className="basket__priceElement">
+                  </h2>
+                  <h2 className="basket__priceElement">
                     {numberWithSpaces(basketElement[0].price)} zł
-                  </h1>
-                  <h1 className="basket__span-container">
+                  </h2>
+                  <h2 className="basket__span-container">
                     <span
                       className="basket__span-btn"
                       onClick={() => subtractQuantity(basketElement[0].id)}
@@ -161,33 +177,33 @@ export default function Basket(props) {
                     >
                       +
                     </span>
-                  </h1>
-                  <h1>
+                  </h2>
+                  <h2>
                     <i
                       className="fas fa-trash"
                       onClick={() => deleteElement(basketElement[0].id)}
                     ></i>
-                  </h1>
-                  <h1 className="basket__totalElement">
+                  </h2>
+                  <h2 className="basket__totalElement">
                     {numberWithSpaces(
                       basketElement[0].price * basketElement[0].quantity
                     )}{" "}
                     zł
-                  </h1>
+                  </h2>
                 </div>
               </div>
             ))
           ) : (
             <div className="basket__empty">Empty Basket</div>
           )}
-        </div>
+        </section>
 
         <div className="basket__conclusion">
           <div className="basket__summary">
             <button onClick={resetBasketElements}>Clear cart</button>
           </div>
           <div className="basket__payment">
-            <h1>Total: {numberWithSpaces(reeduceCar)} zł</h1>
+            <h2>Total: {numberWithSpaces(reeduceCar)} zł</h2>
           </div>
 
           <Button onClick={continueStep}>
@@ -200,7 +216,7 @@ export default function Basket(props) {
             </button>
           </Button>
         </div>
-      </div>
+      </main>
 
       <div className="triangle"></div>
     </>

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
-const UserContainer = styled.div`
+const UserContainer = styled.main`
   width: 35vw;
   margin: 0 auto;
   padding-top: 2rem;
@@ -118,9 +118,9 @@ export default function User() {
   }
 
   return (
-    <div className="user__container">
+    <section className="user__container">
       <UserContainer>
-        <div className="photo__container">
+        <header className="photo__container">
           <label htmlFor="imageUser">
             <div className="photo__photos">
               <img
@@ -143,17 +143,17 @@ export default function User() {
             className="file-reader"
             id="imageUser"
           />
-        </div>
+        </header>
 
         <div className="photo__user-information">
-          <div className="photo__user-information-left">
-            <h1 className="photo__user-name">
+          <hgroup className="photo__user-information-left">
+            <h3 className="photo__user-name">
               Username: <span className="photo__user-data">{user}</span>{" "}
-            </h1>
-            <h1 className="photo__user-name">
+            </h3>
+            <h3 className="photo__user-name">
               Email: <span className="photo__user-data">{email}</span>{" "}
-            </h1>
-            <h1 className="photo__user-name">
+            </h3>
+            <h3 className="photo__user-name">
               Your address:{" "}
               <span
                 contentEditable="true"
@@ -164,11 +164,11 @@ export default function User() {
                 {AddressValue}
                 <i className="fas fa-pen pen-correct"></i>
               </span>
-            </h1>
-          </div>
+            </h3>
+          </hgroup>
         </div>
       </UserContainer>
       <div className="triangle"></div>
-    </div>
+    </section>
   );
 }

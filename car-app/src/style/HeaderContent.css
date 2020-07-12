@@ -100,7 +100,7 @@
   justify-content: center;
   align-items: center;
 }
-.header__content-rectangle h1 {
+.header__content-rectangle h3 {
   color: #fff;
   font-size: 2rem;
 }
@@ -132,7 +132,7 @@
   transform: translateX(-50%);
   opacity: 0.8;
 }
-.header__content-services p {
+.header__content-services figcaption {
   transform: rotate(-90deg);
   position: absolute;
   top: 50%;
@@ -410,7 +410,7 @@
   .header__content-services h1::after {
     font-size: 7rem;
   }
-  .header__content-services p {
+  .header__content-services figcaption {
     font-size: 2rem;
   }
   .ellipse.thick {
@@ -483,7 +483,7 @@
     top: 0;
     left: 105%;
   }
-  .header__content-services p {
+  .header__content-services figcaption {
     font-size: 1.1rem;
     transform: rotate(0);
     top: 105%;
@@ -497,7 +497,7 @@
     justify-content: center;
     align-items: center;
   }
-  .header__content-rectangle h1 {
+  .header__content-rectangle h3 {
     font-size: 1.7em;
   }
 }
@@ -548,7 +548,7 @@
     transform: translateX(-50%);
     opacity: 0.8;
   }
-  .header__content-services p {
+  .header__content-services figcaption {
     transform: rotate(-90deg);
     position: absolute;
     top: 50%;
