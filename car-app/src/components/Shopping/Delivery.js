@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../theme/theme';
-import { Button } from './Elements/Button';
+import { theme } from '../../theme/theme';
+import { Button } from '../Elements/Button';
 import DeliveryCity from './DeliveryCity';
-import Loading from './Loading';
+import Loading from '../Spinner/Loading';
 
 const DeliveryStyle = styled.section`
 	width: 50%;

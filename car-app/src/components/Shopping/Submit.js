@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../theme/theme';
-import { Button } from './Elements/Button';
-import { ProductsContext } from '../context/context';
-import PayPalButton from './PayPalButton';
+import { theme } from '../../theme/theme';
+import { Button } from '../Elements/Button';
+import { ProductsContext } from '../../context/context';
+import PayPalButton from '../PayPal/PayPalButton';
 
 const SumbitComponent = styled.section`
 	margin: 4rem auto;

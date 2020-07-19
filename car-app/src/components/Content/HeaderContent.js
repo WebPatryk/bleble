@@ -1,11 +1,12 @@
 import React, { useState, useMemo, lazy, Suspense } from 'react';
-import '../style/HeaderContent.css';
-import Loading from './Loading';
+// import '../style/HeaderContent.css';
+import Loading from '../Spinner/Loading';
 import { useQuery } from '@apollo/react-hooks';
+import { MainLayout } from '../Elements/MainLayout';
 
-import { cars, Audi, Mercedes, Lexus, New, Used, Less100, Less200, More200 } from '../querys/query';
+import { cars, Audi, Mercedes, Lexus, New, Used, Less100, Less200, More200 } from '../../querys/query';
 import MainPage from './MainPage';
-const Car = lazy(() => import('./Car'));
+const Car = lazy(() => import('../Cars/Car'));
 
 function HeaderContent() {
 	const [query, setQuery] = useState(cars);
@@ -49,7 +50,7 @@ function HeaderContent() {
 	}, []);
 
 	return (
-		<>
+		<MainLayout>
 			{MemoMenuPage}
 
 			<section className="filter__container">
@@ -103,7 +104,7 @@ function HeaderContent() {
 			</section>
 
 			{content}
-		</>
+		</MainLayout>
 	);
 }
 

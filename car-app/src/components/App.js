@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import HeaderContent from './HeaderContent';
-import Products from './Products';
-import Contacts from './Contacts';
-import SingleCar from './SingleCar';
-import { SignIn } from './SignIn';
-import Register from './Register';
-import User from './User';
+import HeaderContent from './Content/HeaderContent';
+import Products from './Cars/Products';
+import Contacts from './Contacts/Contacts';
+import SingleCar from './Cars/SingleCar';
+import SignIn from './Account/SignIn';
+import Register from './Account/Register';
+import User from './Account/User';
 import { ProductsContext } from '../context/context';
 import ReactNotification from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './Navbar';
-import ShoppingSteps from './ShoppingSteps';
-import SuccessfulShopping from './SuccessfulShopping';
+import Navbar from '../components/Navbar/Navbar';
+import ShoppingSteps from './Shopping/ShoppingSteps';
+import SuccessfulShopping from './Shopping/SuccessfulShopping';
 
 function App() {
 	const [valueState, setValueState] = useState([]);

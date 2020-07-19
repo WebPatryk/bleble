@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import ProductsCars from './ProductsCars';
-import Loading from './Loading';
+import Loading from '../Spinner/Loading';
 
 let numberCar = 2;
 
@@ -56,6 +56,25 @@ const ProdctsCart = styled.div`
 	}
 	.car-content {
 		justify-self: center;
+	}
+	.more-elements {
+		width: 100%;
+		text-align: center;
+	}
+	.more-cars {
+		padding: 14px 44px;
+		background-color: var(--main-color);
+		border: none;
+		font-size: 2rem;
+		margin: 5rem auto;
+		cursor: pointer;
+		outline: none;
+		color: #fff;
+		font-weight: bold;
+		border-radius: 20px;
+	}
+	.more-cars:hover {
+		opacity: 0.8;
 	}
 
 	@media screen and (max-width: 800px) {
@@ -157,12 +176,13 @@ export default function Products() {
 					</div>
 				</main>
 				<div className="triangle"></div>
+
+				<div className="more-elements">
+					<button className="more-cars" onClick={handleAddNumberCars} disabled={allCars}>
+						Load more
+					</button>
+				</div>
 			</ProdctsCart>
-			<div className="more-elements">
-				<button className="more-cars" onClick={handleAddNumberCars} disabled={allCars}>
-					Load more
-				</button>
-			</div>
 		</div>
 	);
 }

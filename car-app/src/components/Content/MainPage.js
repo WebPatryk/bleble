@@ -1,6 +1,6 @@
 import React from 'react';
-import mercedes from '../image/mercedes.png';
-import smallTriangle from '../image/small-triangle.svg';
+import mercedes from '../../image/mercedes.png';
+import smallTriangle from '../../image/small-triangle.svg';
 
 export default function MainPage() {
 	return (

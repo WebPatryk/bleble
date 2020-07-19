@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 import { FaStopwatch, FaBox } from 'react-icons/fa';
 import { IoMdListBox } from 'react-icons/io';
 import { GiPriceTag } from 'react-icons/gi';
-import nice from '../image/nice.png';
+import nice from '../../image/nice.png';
 
 const AccountContainer = styled.section`
 	display: flex;

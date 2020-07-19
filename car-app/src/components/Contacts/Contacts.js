@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { ReactComponent as Poland } from '../image/poland.svg';
+import { ReactComponent as Poland } from '../../image/poland.svg';
 import styled, { ThemeProvider } from 'styled-components';
 import { RiRoadMapLine } from 'react-icons/ri';
-import { size } from '../theme/theme';
+import { size } from '../../theme/theme';
 
 const theme = {
 	primaryColor: '#F8F8F8',

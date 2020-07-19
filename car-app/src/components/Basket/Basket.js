@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import '../style/Basket.css';
-import { ProductsContext } from '../context/context';
+// import '../style/Basket.css';
+import { ProductsContext } from '../../context/context';
 import { store } from 'react-notifications-component';
-import PayPalButton from './PayPalButton';
+import PayPalButton from '../PayPal/PayPalButton';
 import styled from 'styled-components';
-
+import { BasketElement } from '../Elements/BasketElements';
 const Button = styled.div`
 	width: 16rem;
 	text-transform: uppercase;
@@ -130,7 +130,7 @@ export default function Basket(props) {
 	};
 
 	return (
-		<>
+		<BasketElement>
 			<main className="basket__container">
 				<header className="basket__products">
 					<h1>Poducts</h1>
@@ -204,6 +204,6 @@ export default function Basket(props) {
 			</main>
 
 			<div className="triangle"></div>
-		</>
+		</BasketElement>
 	);
 }

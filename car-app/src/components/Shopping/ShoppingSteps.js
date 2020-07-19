@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Basket from './Basket';
-import Account from './Account';
+import Basket from '../Basket/Basket';
+import Account from '../Account/Account';
 import Delivery from './Delivery';
 import Submit from './Submit';
 import styled from 'styled-components';

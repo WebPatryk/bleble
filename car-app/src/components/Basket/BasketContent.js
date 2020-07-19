@@ -1,6 +1,6 @@
 import React from 'react';
 import Basket from './Basket';
-import ShoppingSteps from './ShoppingSteps';
+import ShoppingSteps from '../Shopping/ShoppingSteps';
 export default function BasketContent() {
 	return (
 		<>
