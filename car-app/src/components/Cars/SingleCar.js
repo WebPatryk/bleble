@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Link } from 'react-router-dom';
-// import '../style/SingleCar.css';
 import { ProductsContext } from '../../context/context';
 import { store } from 'react-notifications-component';
 import Loading from '../Spinner/Loading';
@@ -21,6 +20,7 @@ import {
 import { IconContext } from 'react-icons';
 import { SingleCarStyle } from '../Elements/SingleCarStyle';
 const Button = styled.div`
+	width: 100%;
 	.button-container {
 		background-color: var(--main-color);
 		display: flex;
@@ -75,7 +75,9 @@ const Button = styled.div`
 
 	.basket-btn {
 		outline: 5px solid var(--box-color);
+		margin: 0 auto;
 	}
+
 	.btn-to-basket {
 		padding: 13px 30px;
 		font-size: 2rem;

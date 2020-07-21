@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import triangle from '../../image/triangle.svg';
 export const BasketElement = styled.section`
 	.basket__container {
 		padding-top: 3rem;
@@ -185,5 +185,15 @@ export const BasketElement = styled.section`
 		.basket__payment h1 {
 			text-align: center;
 		}
+	}
+	.triangle {
+		display: block;
+		background-image: url(${triangle});
+		background-size: cover;
+		width: 800px;
+		height: 800px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
 	}
 `;

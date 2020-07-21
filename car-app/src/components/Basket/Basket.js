@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-// import '../style/Basket.css';
 import { ProductsContext } from '../../context/context';
 import { store } from 'react-notifications-component';
 import PayPalButton from '../PayPal/PayPalButton';

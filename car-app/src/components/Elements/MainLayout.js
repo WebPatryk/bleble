@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import triangle from '../../image/triangle.svg';
 export const MainLayout = styled.section`
 	.header__content {
 		background-color: #f8f8f8;
@@ -9,14 +9,14 @@ export const MainLayout = styled.section`
 	}
 
 	.triangle {
-		background-image: url('../image/triangle.svg');
+		display: block;
+		background-image: url(${triangle});
 		background-size: cover;
 		width: 800px;
 		height: 800px;
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		/* z-index: ; */
 	}
 	.header__content-car {
 		position: absolute;

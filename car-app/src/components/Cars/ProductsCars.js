@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../style/Car.css';
 import styled from 'styled-components';
 
 const CarStyle = styled.section`
@@ -18,6 +17,7 @@ const CarStyle = styled.section`
 
 	.car__content-photo {
 		width: 30rem;
+		height: 200px;
 	}
 	.car__content-title {
 		text-align: center;

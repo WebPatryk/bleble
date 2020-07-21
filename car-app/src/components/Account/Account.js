@@ -74,7 +74,7 @@ const AccountContainer = styled.section`
 	}
 `;
 
-const Button = styled.div`
+const Button = styled.button`
 	width: 16rem;
 	text-transform: uppercase;
 	font-size: 1.4rem;
@@ -87,9 +87,14 @@ const Button = styled.div`
 	text-align: center;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 	cursor: pointer;
+	border: none;
 
 	:hover {
 		opacity: 0.7;
+	}
+	:disabled {
+		opacity: 0.3;
+		pointer-events: none;
 	}
 `;
 
@@ -100,6 +105,8 @@ export default function Account({ prevStep, nextStep }) {
 	function backStep() {
 		prevStep();
 	}
+
+	const isUserExist = localStorage.getItem('username');
 
 	return (
 		<AccountContainer>
@@ -137,7 +144,9 @@ export default function Account({ prevStep, nextStep }) {
 						</div>
 					</IconContext.Provider>
 					<Button onClick={backStep}>{'<<'}Back</Button>
-					<Button onClick={continueStep}>Next {'>>'}</Button>
+					<Button onClick={continueStep} disabled={!isUserExist}>
+						Next {'>>'}
+					</Button>
 				</article>
 			) : (
 				<section>

@@ -256,17 +256,18 @@ export default function Delivery({ prevStep, nextStep, handleDelivery }) {
 														onChange={handleOption}
 													>
 														<option value="default">Choose delivery city...</option>
-														{parcelArea.map((parcel, i) => {
-															return (
-																<DeliveryCity
-																	postCode={parcel.address.line2}
-																	street={parcel.address_details.city}
-																	address={parcel.address.line1}
-																	firstChild={i}
-																	key={parcel.name}
-																/>
-															);
-														})}
+														{parcelArea &&
+															parcelArea.map((parcel, i) => {
+																return (
+																	<DeliveryCity
+																		postCode={parcel.address.line2}
+																		street={parcel.address_details.city}
+																		address={parcel.address.line1}
+																		firstChild={i}
+																		key={parcel.name}
+																	/>
+																);
+															})}
 													</select>
 												</div>
 

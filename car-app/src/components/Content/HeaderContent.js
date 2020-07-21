@@ -1,5 +1,4 @@
 import React, { useState, useMemo, lazy, Suspense } from 'react';
-// import '../style/HeaderContent.css';
 import Loading from '../Spinner/Loading';
 import { useQuery } from '@apollo/react-hooks';
 import { MainLayout } from '../Elements/MainLayout';

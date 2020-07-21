@@ -42,7 +42,6 @@ export const SingleCarStyle = styled.section`
 		width: 50%;
 	}
 	.details__box-right {
-		/* height: 90%; */
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
