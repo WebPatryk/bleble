@@ -1,6 +1,6 @@
 # E-commerce (car store)
 
-## I am sorry but I am still working on deployment strapi, becouse without this cars aren't visible, but look at the code to find all the functionality there
+## I am sorry but I am still working on deployment strapi, because without this cars aren't visible, but look at the code to find all the functionality there
 
 ## Describtion
 
